@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    <title>WY's World - {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header id="topbar">
+        <h1 id="logo"><a href="/blog/">王小憨</a></h1>
+    </header>
+    <span id="menu">MENU</span>
+    <nav id="nav">
+        <ul id="cate">
+            <li><a href="#">首页</a></li>
+            <li><a href="/blog/journals/">文章</a></li>
+            <li><a href="#">照片</a></li>
+            <li><a href="#">留言板</a></li>
+            <li><a href="/blog/register" id="btn_login">登录</a></li>
+            <li><a href="/blog/register" id="btn_register">注册</a></li>
+            <li><a href="/blog/countdown/">demo</a></li>
+            <li><a href="#" id="ajaxBtn">Ajax</a></li>
+        </ul>
+    </nav>
+    {% block content %} {% endblock %}
+    {% block script %}{% endblock %}
+</body>
+
+</html>

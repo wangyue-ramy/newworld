@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div id="page_wrapper">
+    <section id="banner" class="page">
+        <div class="inner">
+            <h2 class="sub-head">王</h2>
+            <p>总是吃得太多</p>
+            <p class="description">动得太少</p>
+            <div class="next">
+                <span>更多</span>
+            </div>
+        </div>
+    </section>
+    <section id="page2" class="page">
+        <div class="inner">
+            <h2 class="sub-head">小</h2>
+            <p>总是花得太多</p>
+            <p class="description">赚得太少</p>
+            <div class="next">
+                <span>更多</span>
+            </div>
+        </div>
+    </section>
+    <section id="page3" class="page">
+        <div class="inner">
+            <h2 class="sub-head">憨</h2>
+            <p>总是想得太多</p>
+            <p class="description">成得太少</p>
+            <div class="next">
+                <span>更多</span>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Register{% endblock %}
+{% block content %}
+<div id="login">
+    <div class="modal-head">
+        <span>登录</span>
+        <span class="closeModal">关闭</span>
+    </div>
+    <form method="post" id="login_form" action="/blog/" class="modal-body">
+        {% csrf_token %}
+        <label class="help_text">账号</label>
+        <br>
+        <input type="text" name="username" value="" class="textBox">
+        <br>
+        <label class="help_text">密码</label>
+        <br>
+        <input type="password" name="password" value="" class="textBox">
+        <br>
+        <input type="submit" value="登录" class="button">
+    </form>
+</div>
+<div id="register">
+    <div class="modal-head">
+        <span>注册</span>
+        <span class="closeModal">关闭</span>
+    </div>
+    <form action="/blog/" method="post" id="user_form" enctype="mutipart/form-data" class="modal-body">
+        {% csrf_token %}
+        <label class="help_text">账号</label>
+        <br>
+        <input type="text" name="username" value="" class="textBox">
+        <br>
+        <label class="help_text">密码</label>
+        <br>
+        <input type="password" name="password" value="" class="textBox">
+        <br>
+        <label for="">邮箱</label>
+        <br>
+        <input type="email" name="email" value="" class="textBox">
+        <br>
+        <label for="">网址</label>
+        <br>
+        <input type="text" name="website" value="" class="textBox">
+        <label for="">头像</label>
+        <input type="file" name="profile" value="">
+        <br>
+        <input type="submit" name="submit" value="注册" class="button" id="reBtn">
+    </form>
+</div>
+{% endblock %}

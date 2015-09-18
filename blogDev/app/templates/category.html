@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %} {% block content %}
+<ul id="timeline">
+    <li class="timenode">
+        <span class="time">2015年</span>
+        <div class="node" id="test">
+            <span class="insline" id="test1"></span>
+            <div class="journalWrap" id="test0"></div>
+        </div>
+    </li>
+    <li class="timenode">
+        <span class="time">2014年</span>
+        <span class="node"></span>
+    </li>
+    <li class="timenode">
+        <span class="time">2013年</span>
+        <span class="node"></span>
+    </li>
+    <li class="timenode">
+        <span class="time">2012年</span>
+        <span class="node"></span>
+    </li>
+    <li class="timenode">
+        <span class="time">2011年</span>
+        <span class="node"></span>
+    </li>
+</ul>
+{% if journals %}
+<ul>
+    {% for journal in journals %}
+    <li>
+        <a href="/blog/journals/{{ journal.id }}">{{ journal.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h1>There is no journals in the database.</h1> {% endif %} {% endblock %}

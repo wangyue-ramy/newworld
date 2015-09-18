@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}Count down{% endblock %}
+{% block content %}
+<canvas id="canvas"></canvas>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static 'blog/digit.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/countdown.js' %}"></script>
+{% endblock %}
