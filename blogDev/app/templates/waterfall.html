@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div id="waterfallWrapper">
+    <img src="{% static 'blog/1.jpg' %}" alt="">
+    <img src="{% static 'blog/2.jpg' %}" alt="">
+    <img src="{% static 'blog/3.jpg' %}" alt="">
+    <img src="{% static 'blog/4.jpg' %}" alt="">
+    <img src="{% static 'blog/5.jpg' %}" alt="">
+    <img src="{% static 'blog/6.jpg' %}" alt="">
+    <img src="{% static 'blog/7.jpg' %}" alt="">
+    <img src="{% static 'blog/8.jpg' %}" alt="">
+    <img src="{% static 'blog/9.jpg' %}" alt="">
+    <img src="{% static 'blog/10.jpg' %}" alt="">
+    <img src="{% static 'blog/11.jpg' %}" alt="">
+    <img src="{% static 'blog/12.jpg' %}" alt="">
+    <img src="{% static 'blog/13.jpg' %}" alt="">
+    <img src="{% static 'blog/14.jpg' %}" alt="">
+    <img src="{% static 'blog/15.jpg' %}" alt="">    
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static "blog/waterfall.js" %}"></script>
+{% endblock %}
