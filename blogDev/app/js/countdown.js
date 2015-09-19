@@ -135,6 +135,8 @@ window.onload = function() {
         return numList;
     }
 
+    base();
+
 }
 
 
