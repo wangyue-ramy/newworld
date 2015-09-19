@@ -1,4 +1,4 @@
-var waterfall = (function() {
+function waterfall() {
     var html = document.documentElement;
     var body = document.body;
     var wrapper = document.getElementById('waterfallWrapper');
@@ -15,11 +15,10 @@ var waterfall = (function() {
     var boxWidth = imgOffsetWidth + 2 * settings.margin;
     var heights = [];
 
-    function init() {
+    (function() {
         body.scrollTop = 0;
         wrapper.style.width = settings.wrapWidth + 'px';
         wrapper.style.top = '50px';
-        // topbar.style.display = 'none';
         for (var i = 0; i < imgs.length; i++) {
             imgs[i].style.width = imgWidth + 'px';
             if (i < 5) {
@@ -28,7 +27,7 @@ var waterfall = (function() {
                 getRightPos(imgs[i]);
             }
         }
-    }
+    })();
 
     function getRightPos(img) {
         img.style.width = imgWidth + 'px';
@@ -49,7 +48,7 @@ var waterfall = (function() {
         return min;
     }
 
-    function loadImgs() {
+    function loadImgs(e) {
         if (html.clientHeight + body.scrollTop > html.scrollHeight - 150) {
             for (var i = 0; i < 5; i++) {
                 img = document.createElement('img');
@@ -64,12 +63,8 @@ var waterfall = (function() {
             topbar.style.opacity = 1;
         }
     }
+    base();
+    window.addEventListener('mousewheel', loadImgs);
+};
 
-    return {
-        init: init,
-        loadImgs: loadImgs,
-    }
-})();
-
-window.addEventListener('load', waterfall.init);
-window.addEventListener('scroll', waterfall.loadImgs);
+window.addEventListener('load', waterfall);
